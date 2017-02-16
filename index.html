@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            width: 300px;
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+            height: 30px;
+            background: #CCCCCC;
+        }
+    </style>
+
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oul=document.getElementsByTagName('ul')[0];
+    var lis=oul.getElementsByTagName('li');
+
+    for(var i=0;i<lis.length;i++){
+        lis[i].onmouseover=function(){
+            if(this.previousElementSibling){
+                this.previousElementSibling.style.backgroundColor='red'
+            }
+            if(this.nextElementSibling){
+                this.nextElementSibling.style.backgroundColor='red'
+            }
+            this.style.backgroundColor='yellow'
+
+        }
+        lis[i].onmouseout=function(){
+            if(this.previousElementSibling){
+                this.previousElementSibling.style.backgroundColor='#CCCCCC'
+            }
+            if(this.nextElementSibling){
+                this.nextElementSibling.style.backgroundColor='#CCCCCC'
+            }
+            this.style.backgroundColor='#CCCCCC'
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
